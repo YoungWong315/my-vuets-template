@@ -1,4 +1,4 @@
-export const responseCode = {
-  success: 200,
-  tokenExpired: 401
+export enum ResponseCode {
+  Success = 200,
+  TokenExpired = 401
 }

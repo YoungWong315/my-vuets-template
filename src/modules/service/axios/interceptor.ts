@@ -1,6 +1,6 @@
 import singleSignOn from '@/modules/sso'
-import { responseCode } from '@/modules/constant'
-const { success, tokenExpired } = responseCode
+import { ResponseCode } from '@/modules/constant'
+const { Success, TokenExpired } = ResponseCode
 
 export function requestSuccessFunc(requestObj: any) {
   return Promise.resolve(requestObj)
@@ -15,10 +15,10 @@ export function responseSuccessFunc(responseObj: any) {
 
   try {
     switch (data.code) {
-      case success:
+      case Success:
         // 业务成功
         return data
-      case tokenExpired:
+      case TokenExpired:
         // 登录过期
         singleSignOn()
       default:

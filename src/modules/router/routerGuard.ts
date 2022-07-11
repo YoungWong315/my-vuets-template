@@ -1,5 +1,5 @@
 import * as vueRouter from 'vue-router'
-import { Auth, responseCode, updateToken } from '@/modules/service'
+import { Auth, ResponseCode, updateToken } from '@/modules/service'
 import singleSignOn from '@/modules/sso'
 
 async function checkLoginStatus(to: vueRouter.RouteLocationNormalized) {
@@ -13,7 +13,7 @@ async function checkLoginStatus(to: vueRouter.RouteLocationNormalized) {
     } else {
       // 有code，本地登录获取token
       const res: any = await Auth.getToken(code, encodeURIComponent(localStorage.getItem('redirectUrl') || ''))
-      if (res.code === responseCode.success) {
+      if (res.code === ResponseCode.Success) {
         updateToken(res.msg)
         localStorage.setItem('token', res.msg)
       } else {

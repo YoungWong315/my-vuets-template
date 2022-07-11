@@ -7,11 +7,9 @@ import {
   responseFailFunc,
 } from './interceptor'
 
-const baseURL = import.meta.env.VITE_APP_BASEURL
-
 // 默认配置
 const axiosInstance = axios.create({
-  baseURL,
+  baseURL: import.meta.env.VITE_APP_BASEURL,
   timeout: 10000,
   maxContentLength: 2000,
   /*允许携带cookie*/
