@@ -5,9 +5,17 @@ import HelloWorld from '@/components/HelloWorld.vue'
 </script>
 
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+  <div class="index">
+    <img alt="Vue logo" src="../assets/logo.png" />
+    <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+  </div>
 </template>
 
-<style scoped>
+<style>
+.index {
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+  line-height: 1.5;
+}
 </style>
