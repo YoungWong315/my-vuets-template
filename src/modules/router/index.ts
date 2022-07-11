@@ -1,5 +1,5 @@
 import * as vueRouter from 'vue-router'
-import RouterGuard from './routerGuard'
+import launchRouterGuard from './routerGuard'
 
 const routes = [
   {
@@ -27,6 +27,6 @@ const router = vueRouter.createRouter({
   },
 })
 
-new RouterGuard(router).start()
+launchRouterGuard(router)
 
 export default router

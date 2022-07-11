@@ -2,6 +2,9 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import { createPinia } from 'pinia'
 
+import * as service from '@/modules/service'
+console.log(service)
+
 import 'reset-css/reset.css'
 import router from '@/modules/router/index'
 

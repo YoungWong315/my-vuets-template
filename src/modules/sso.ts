@@ -1,4 +1,4 @@
-export function singleSignOn() {
+export default function singleSignOn() {
   localStorage.removeItem('token')
   localStorage.removeItem('redirectUrl')
   const authServer = import.meta.env.VITE_APP_AUTHSERVER

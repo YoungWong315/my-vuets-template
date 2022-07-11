@@ -1,10 +1,6 @@
-import axios from '@/modules/axios'
+import axios from '@/modules/service/axios'
 
-class Auth {
-  /* 获取token */
-  getToken = (code, redirectUrl) => axios.post('/auth/getToken', {code, redirectUrl})
-  /* 获取用户信息 */
-  getUserInfo = () => axios.post('/auth/getUserInfo')
-}
-
-export default Auth
+/* 获取token */
+export const getToken = (code: string, redirectUrl: string) => axios.post('/auth/getToken', {code, redirectUrl})
+/* 获取用户信息 */
+export const getUserInfo = () => axios.post('/auth/getUserInfo')
