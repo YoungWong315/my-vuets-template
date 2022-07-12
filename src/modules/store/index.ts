@@ -3,12 +3,12 @@ import { Auth } from '@/modules/service'
 
 export const useMain = defineStore('main', {
   state: () => ({
-    data: null
+    data: null,
+    userInfo: {}
   }),
   getters: {
 
   },
   actions: {
-    
   }
 })

@@ -17,7 +17,7 @@ async function checkLoginStatus(to: vueRouter.RouteLocationNormalized) {
         updateToken(res.msg)
         localStorage.setItem('token', res.msg)
       } else {
-        alert(res.msg)
+        console.log(res.msg)
       }
     }
   }

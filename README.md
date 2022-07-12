@@ -21,4 +21,13 @@ You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/
 
 ## UI component
 1. vant-ui on mobile device
-2. element-plus on pc device
+2. ant-design-vue on pc device
+
+## running command
+1. "dev": "vite --mode dev"
+2. "prod": "vite --mode prod"
+3. "builddev": "vue-tsc --noEmit && vite build --mode dev"
+4. "buildprod": "vue-tsc --noEmit && vite build --mode prod"
+5. "build": "vue-tsc --noEmit && vite build --mode prod"
+
+## eslint
