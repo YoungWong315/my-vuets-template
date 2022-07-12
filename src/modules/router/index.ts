@@ -5,7 +5,7 @@ const routes = [
   {
     path: '/',
     name: 'Index',
-    component: () => import('@/views/Index.vue'),
+    component: () => import('@/views/HomePage.vue'),
     meta: {
       // keepAlive: true
     }

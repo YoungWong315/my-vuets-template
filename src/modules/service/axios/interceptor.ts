@@ -15,14 +15,15 @@ export function responseSuccessFunc(responseObj: any) {
 
   try {
     switch (data.code) {
-      case Success:
-        // 业务成功
-        return data
-      case TokenExpired:
-        // 登录过期
-        singleSignOn()
-      default:
-        return data
+    case Success:
+      // 业务成功
+      return data
+    case TokenExpired:
+      // 登录过期
+      singleSignOn()
+      break
+    default:
+      return data
     }
   } catch (error) {
     console.log('interceptor error: ', error)
