@@ -16,7 +16,7 @@ const count = ref(0)
     <a href="https://github.com/johnsoncodehk/volar" target="_blank">Volar</a>
   </p>
 
-  <p>See <code>README.md</code> for more information.</p>
+  <p>See README.md for more information.</p>
 
   <p>
     <a href="https://vitejs.dev/guide/features.html" target="_blank">
@@ -28,8 +28,7 @@ const count = ref(0)
 
   <button type="button" @click="count++">count is: {{ count }}</button>
   <p>
-    Edit
-    <code>components/HelloWorld.vue</code> to test hot module replacement.
+    Edit components/HelloWorld.vue to test hot module replacement.
   </p>
 </template>
 
