@@ -2,7 +2,7 @@ const phoneValidate = (phone: string) => /^[1][3-9][0-9]{9}$/.test(phone)
 
 function renderFileSize(value: string) {
   if (!value) return '0 Bytes'
-  var unitArr = new Array(
+  const unitArr = [
     'Bytes',
     'KB',
     'MB',
@@ -12,11 +12,11 @@ function renderFileSize(value: string) {
     'EB',
     'ZB',
     'YB'
-  )
-  var index = 0
-  var srcsize = parseFloat(value)
+  ]
+  let index = 0
+  const srcsize = parseFloat(value)
   index = Math.floor(Math.log(srcsize) / Math.log(1024))
-  var size = srcsize / Math.pow(1024, index)
+  let size = srcsize / Math.pow(1024, index)
   size = Number(size.toFixed(2)) //保留的小数位数
   return size + unitArr[index]
 }

@@ -1,7 +1,8 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
-const path = require('path')
+import * as path from 'path'
+
 const projectRootDir = path.resolve(__dirname)
 
 import Components from 'unplugin-vue-components/vite'
@@ -26,6 +27,27 @@ export default ({ mode, command }) => {
       Components({
         resolvers: [VantResolver(), AntDesignVueResolver()],
       }),
-    ],
+      AutoImport({
+        include: [
+          /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
+          /\.vue$/,
+          /\.vue\?vue/, // .vue
+          /\.md$/ // .md
+        ],
+        imports: [
+          'vue',
+          'vue-router',
+          {
+            '@vueuse/core': [
+              'useMouse',
+              ['useFetch', 'useMyFetch']
+            ],
+            axios: [
+              ['default', 'axios']
+            ]
+          }
+        ]
+      })
+    ]
   })
 }
