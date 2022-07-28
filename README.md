@@ -21,7 +21,7 @@ You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/
 
 ## UI component
 1. vant-ui on mobile device
-2. ant-design-vue on pc device
+2. ant-design-vue & element-plus on pc device, decide accordingly
 
 ## running command
 1. "dev": "vite --mode dev"

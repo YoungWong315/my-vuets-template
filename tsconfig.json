@@ -12,6 +12,7 @@
     "esModuleInterop": true,
     "lib": ["esnext", "dom"],
     "skipLibCheck": true,
+    "types": ["element-plus/global"],
     "strictPropertyInitialization": true, // 强制初始化类属性检查
     // 解决 @ alias 的问题
     "baseUrl": ".",

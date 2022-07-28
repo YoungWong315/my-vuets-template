@@ -7,7 +7,7 @@ const projectRootDir = path.resolve(__dirname)
 
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
-import { VantResolver, AntDesignVueResolver } from 'unplugin-vue-components/resolvers'
+import { VantResolver, AntDesignVueResolver, ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
 // https://vitejs.dev/config/
 export default ({ mode, command }) => {
@@ -25,7 +25,7 @@ export default ({ mode, command }) => {
     plugins: [
       vue(),
       Components({
-        resolvers: [VantResolver(), AntDesignVueResolver()],
+        resolvers: [VantResolver(), AntDesignVueResolver(), ElementPlusResolver()],
       }),
       AutoImport({
         include: [
@@ -46,7 +46,8 @@ export default ({ mode, command }) => {
               ['default', 'axios']
             ]
           }
-        ]
+        ],
+        resolvers: [ElementPlusResolver()],
       })
     ]
   })
