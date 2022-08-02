@@ -1,7 +1,7 @@
-import * as vueRouter from 'vue-router'
+import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import launchRouterGuard from './routerGuard'
 
-const routes = [
+const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'Index',
@@ -12,12 +12,12 @@ const routes = [
   },
 ]
 
-const router = vueRouter.createRouter({
+const router = createRouter({
   // baseFolder('/context/') should be same with the base value in vite.config.ts 
-  history: vueRouter.createWebHistory('/context/'),
+  history: createWebHistory('/context/'),
   routes,
   // 只有一级路由可以使用
-  scrollBehavior(to: vueRouter.RouteLocationNormalized, from: any, savedPosition: any) {
+  scrollBehavior(to: any, from: any, savedPosition: any) {
     // keep-alive 的组件，保留滚动位置
     if (savedPosition && to.meta.keepAlive && to.meta.keepAlive != undefined) {
       return savedPosition
