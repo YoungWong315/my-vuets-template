@@ -1,5 +1,5 @@
 import singleSignOn from '@/modules/sso'
-import { ResponseCode } from '@/modules/constant'
+import { ResponseCode } from '../types/http'
 const { Success, TokenExpired } = ResponseCode
 
 export function requestSuccessFunc(requestObj: any) {
