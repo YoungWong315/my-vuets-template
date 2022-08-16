@@ -7,7 +7,6 @@ const routes: Array<RouteRecordRaw> = [
     name: 'Index',
     component: () => import('@/views/HomePage.vue'),
     meta: {
-      // keepAlive: true
     }
   },
 ]

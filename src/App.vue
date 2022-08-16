@@ -1,14 +1,18 @@
 <script setup lang="ts">
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
+import { useKAComponent } from '@/modules/store'
+/**
+ * 1. 在 pinia(@/modules/store/keepAlive.ts) 中维护需要缓存 路由name
+ * 2. 通过 keep-alive 的 include 缓存对应路由
+ * 3. 动态操作: 使用 keepAlive.ts 中的方法增减 路由name, 即可改变缓存路由状态
+ */
+const store = useKAComponent()
 </script>
 
 <template>
   <router-view v-slot="{ Component }">
-    <!-- 需要使用 include 优化 缓存策略 -->
-    <keep-alive>
-      <component :is="Component" v-if="$route.meta.keepAlive" :key="$route.path"></component>
+    <keep-alive :include="store.components">
+      <component :is="Component" :key="$route.path"></component>
     </keep-alive>
-    <component :is="Component" v-if="!$route.meta.keepAlive" :key="$route.path"></component>
   </router-view>
 </template>
 
@@ -20,5 +24,3 @@ body {
   line-height: 1.5;
 }
 </style>
-
-
