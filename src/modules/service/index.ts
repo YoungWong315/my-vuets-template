@@ -1,6 +1,8 @@
 import axios from '@/modules/service/axios'
 export function updateToken(token: string) {
-  axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  axios.defaults.headers['Authorization'] = `Bearer ${token}`
 }
 
 // 接口
