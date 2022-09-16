@@ -13,7 +13,7 @@ const routes: Array<RouteRecordRaw> = [
 
 const router = createRouter({
   // baseFolder('/context/') should be same with the base value in vite.config.ts 
-  history: createWebHistory('/context/'),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes,
   // 只有一级路由可以使用
   scrollBehavior(to: any, from: any, savedPosition: any) {
