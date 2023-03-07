@@ -31,7 +31,7 @@ export default function launchRouterGuard(router: vueRouter.Router) {
     if (pageTitle) document.title = pageTitle
 
     // 登录判断...
-    await checkLoginStatus(to)
+    // await checkLoginStatus(to)
 
     return true
   })
